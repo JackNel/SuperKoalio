@@ -25,7 +25,7 @@ public class SuperKoalio extends ApplicationAdapter {
     boolean canJump;
 
     final float MAX_VELOCITY = 500;
-    final float MAX_JUMP_VELOCITY = 1000;
+    final float MAX_JUMP_VELOCITY = 2000;
     final int WIDTH = 18;
     final int HEIGHT = 26;
     final int DRAW_WIDTH = WIDTH*3;
@@ -80,6 +80,14 @@ public class SuperKoalio extends ApplicationAdapter {
         if (y < 0) {
             y = 0;
             canJump = true;
+        }
+
+        if (x < 0) {
+            x = 0;
+        }
+
+        if (x > viewport.getScreenWidth() - 50) {
+            x = viewport.getScreenWidth() - 50;
         }
 
         xv *= 0.8;
